@@ -14,7 +14,7 @@ The second argument of ReadContext is the namspace of the property schema.
 
 Example:
 ```XML
-<xsl:value-of select="msxsl:ReadContext(InterchangeID, 'http://schemas.microsoft.com/BizTalk/2003/system-properties')" />
+<xsl:value-of select="msxsl:ReadContext('InterchangeID', 'http://schemas.microsoft.com/BizTalk/2003/system-properties')" />
 ```
 
 ## Properties
