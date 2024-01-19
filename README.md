@@ -1,2 +1,1 @@
-# biztalk-xslt-transform-context
- 
+# XSLT Transform Context - BizTalk Pipeline Component
