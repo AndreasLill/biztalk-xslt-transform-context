@@ -117,7 +117,7 @@ namespace BizTalk.ContextMapper.PipelineComponents
                         {
                             string contextFull = match.Groups[0].Value;
                             string[] context = match.Groups[1].Value?.Split(',');
-                            string contextName = context[0]?.Trim();
+                            string contextName = context[0]?.Trim().Replace("'", "");
                             string contextSchema = context[1]?.Trim().Replace("'", "");
                             string contextValue = messageContext.Read(contextName, contextSchema) as string;
 
