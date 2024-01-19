@@ -6,7 +6,7 @@ This pipeline component enables this by executing a compiled XSLT transformation
 
 ## How To Use
 
-Before the pipeline component executes the XSLT transformation it reads each line for any occurrences of "ReadContext" in the XSLT document.
+Before the pipeline component executes the XSLT transformation it reads each line for any occurrences of "msxsl:ReadContext()" in the XSLT document.
 
 The first argument of ReadContext is the name of the context property.
 
@@ -14,7 +14,7 @@ The second argument of ReadContext is the namspace of the property schema.
 
 Example:
 ```XML
-<xsl:value-of select="'ReadContext(InterchangeID, http://schemas.microsoft.com/BizTalk/2003/system-properties)'" />
+<xsl:value-of select="msxsl:ReadContext(InterchangeID, 'http://schemas.microsoft.com/BizTalk/2003/system-properties')" />
 ```
 
 ## Properties
