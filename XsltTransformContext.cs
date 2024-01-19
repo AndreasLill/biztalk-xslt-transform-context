@@ -108,9 +108,9 @@ namespace BizTalk.ContextMapper.PipelineComponents
                 string line;
                 while ((line = readStream.ReadLine()) != null)
                 {
-                    if (line.Contains("ReadContext"))
+                    if (line.Contains("msxsl:ReadContext"))
                     {
-                        string pattern = @"ReadContext\(([^,]+(?:,\s*[^,]+)*)\)";
+                        string pattern = @"msxsl:ReadContext\(([^,]+(?:,\s*[^,]+)*)\)";
                         var values = Regex.Matches(line, pattern);
 
                         foreach (Match match in values)
@@ -118,10 +118,10 @@ namespace BizTalk.ContextMapper.PipelineComponents
                             string contextFull = match.Groups[0].Value;
                             string[] context = match.Groups[1].Value?.Split(',');
                             string contextName = context[0]?.Trim();
-                            string contextSchema = context[1]?.Trim();
+                            string contextSchema = context[1]?.Trim().Replace("'", "");
                             string contextValue = messageContext.Read(contextName, contextSchema) as string;
 
-                            line = line.Replace(contextFull, contextValue);
+                            line = line.Replace(contextFull, string.Format("'{0}'", contextValue));
                         }
                     }
 
