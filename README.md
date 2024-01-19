@@ -6,7 +6,7 @@ This pipeline component enables this by executing a compiled XSLT transformation
 
 ## How To Use
 
-Before the pipeline component executes the XSLT transformation it reads each line for any occurrences of "msxsl:ReadContext()" in the XSLT document.
+Before the pipeline component executes the XSLT transformation it reads each line for any occurrences of "msxsl:ReadContext" in the XSLT document.
 
 The first argument of ReadContext is the name of the context property.
 
